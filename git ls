@@ -1,0 +1,456 @@
+[33mcommit bc2f58b79d21c41507cd1673e0903e205e6ee076[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop-anibal[m[33m, [m[1;31morigin/release-lorenzo[m[33m, [m[1;31morigin/release-emma[m[33m, [m[1;31morigin/release-anibal[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/develop-lorenzo[m[33m, [m[1;31morigin/develop-emma[m[33m, [m[1;31morigin/develop-anibal[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: josuequevedo <josuedqp18@gmail.com>
+Date:   Tue Jun 25 20:07:12 2024 -0500
+
+    josquevedo: first commit
+
+[1mdiff --git a/.eslintrc.cjs b/.eslintrc.cjs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3e212e1[m
+[1m--- /dev/null[m
+[1m+++ b/.eslintrc.cjs[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32mmodule.exports = {[m
+[32m+[m[32m  root: true,[m
+[32m+[m[32m  env: { browser: true, es2020: true },[m
+[32m+[m[32m  extends: [[m
+[32m+[m[32m    'eslint:recommended',[m
+[32m+[m[32m    'plugin:react/recommended',[m
+[32m+[m[32m    'plugin:react/jsx-runtime',[m
+[32m+[m[32m    'plugin:react-hooks/recommended',[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  ignorePatterns: ['dist', '.eslintrc.cjs'],[m
+[32m+[m[32m  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },[m
+[32m+[m[32m  settings: { react: { version: '18.2' } },[m
+[32m+[m[32m  plugins: ['react-refresh'],[m
+[32m+[m[32m  rules: {[m
+[32m+[m[32m    'react/jsx-no-target-blank': 'off',[m
+[32m+[m[32m    'react-refresh/only-export-components': [[m
+[32m+[m[32m      'warn',[m
+[32m+[m[32m      { allowConstantExport: true },[m
+[32m+[m[32m    ],[m
+[32m+[m[32m  },[m
+[32m+[m[32m}[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a547bf3[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,24 @@[m
+[32m+[m[32m# Logs[m
+[32m+[m[32mlogs[m
+[32m+[m[32m*.log[m
+[32m+[m[32mnpm-debug.log*[m
+[32m+[m[32myarn-debug.log*[m
+[32m+[m[32myarn-error.log*[m
+[32m+[m[32mpnpm-debug.log*[m
+[32m+[m[32mlerna-debug.log*[m
+[32m+[m
+[32m+[m[32mnode_modules[m
+[32m+[m[32mdist[m
+[32m+[m[32mdist-ssr[m
+[32m+[m[32m*.local[m
+[32m+[m
+[32m+[m[32m# Editor directories and files[m
+[32m+[m[32m.vscode/*[m
+[32m+[m[32m!.vscode/extensions.json[m
+[32m+[m[32m.idea[m
+[32m+[m[32m.DS_Store[m
+[32m+[m[32m*.suo[m
+[32m+[m[32m*.ntvs*[m
+[32m+[m[32m*.njsproj[m
+[32m+[m[32m*.sln[m
+[32m+[m[32m*.sw?[m
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..06fe67a[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m\*Structura de ramas:[m
+[32m+[m
+[32m+[m[32mestructuras de rama:[m
+[32m+[m
+[32m+[m[32mfeature/nombre-descriptivo-de-la-rama ----> esto cuando es una nueva tarea.[m
+[32m+[m[32mrefactor/nombre-descriptivo-de-la-rama ----> esto es cuando se va a cambiar algo ya previamente realizado.[m
+[32m+[m[32mfix/nombre-descriptivo-de-la-rama ----> esto es cuando hay un bug y se necesita repararlo.[m
+[32m+[m[32mhotfix/nombre-descriptivo-de-la-rama ----> es cuando hay que hacer un cambio directo en la rama de producción sin pasar por el gitworkflow.[m
+[32m+[m
+[32m+[m[32mcomo dato adicional las ramas siempre se toman de develop, menos cuando es un hotfix que se toma de master.[m
+[32m+[m
+[32m+[m[32mnomenclatura de commit:[m
+[32m+[m
+[32m+[m[32mjosquevedo: change styles in header and footer[m
+[1mdiff --git a/index.html b/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0c589ec[m
+[1m--- /dev/null[m
+[1m+++ b/index.html[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m<!doctype html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <meta charset="UTF-8" />[m
+[32m+[m[32m    <link rel="icon" type="image/svg+xml" href="/vite.svg" />[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[32m+[m[32m    <title>Vite + React</title>[m
+[32m+[m[32m  </head>[m
+[32m+[m[32m  <body>[m
+[32m+[m[32m    <div id="root"></div>[m
+[32m+[m[32m    <script type="module" src="/src/main.jsx"></script>[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f54da9e[m
+[1m--- /dev/null[m
+[1m+++ b/package-lock.json[m
+[36m@@ -0,0 +1,3811 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "name": "ecomerce-spartan",[m
+[32m+[m[32m  "version": "0.0.0",[m
+[32m+[m[32m  "lockfileVersion": 3,[m
+[32m+[m[32m  "requires": true,[m
+[32m+[m[32m  "packages": {[m
+[32m+[m[32m    "": {[m
+[32m+[m[32m      "name": "ecomerce-spartan",[m
+[32m+[m[32m      "version": "0.0.0",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "react": "^18.3.1",[m
+[32m+[m[32m        "react-dom": "^18.3.1"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "devDependencies": {[m
+[32m+[m[32m        "@types/react": "^18.3.3",[m
+[32m+[m[32m        "@types/react-dom": "^18.3.0",[m
+[32m+[m[32m        "@vitejs/plugin-react-swc": "^3.5.0",[m
+[32m+[m[32m        "eslint": "^8.57.0",[m
+[32m+[m[32m        "eslint-plugin-react": "^7.34.2",[m
+[32m+[m[32m        "eslint-plugin-react-hooks": "^4.6.2",[m
+[32m+[m[32m        "eslint-plugin-react-refresh": "^0.4.7",[m
+[32m+[m[32m        "vite": "^5.3.1"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/aix-ppc64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "ppc64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "aix"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/android-arm": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/android-arm/-/android-arm-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-vCPvzSjpPHEi1siZdlvAlsPxXl7WbOVUBBAowWug4rJHb68Ox8KualB+1ocNvT5fjv6wpkX6o/iEpbDrf68zcg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "android"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/android-arm64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/android-arm64/-/android-arm64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-c0uX9VAUBQ7dTDCjq+wdyGLowMdtR/GoC2U5IYk/7D1H1JYC0qseD7+11iMP2mRLN9RcCMRcjC4YMclCzGwS/A==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "android"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/android-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/android-x64/-/android-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-D7aPRUUNHRBwHxzxRvp856rjUHRFW1SdQATKXH2hqA0kAZb1hKmi02OpYRacl0TxIGz/ZmXWlbZgjwWYaCakTA==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "android"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/darwin-arm64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-DwqXqZyuk5AiWWf3UfLiRDJ5EDd49zg6O9wclZ7kUMv2WRFr4HKjXp/5t8JZ11QbQfUS6/cRCKGwYhtNAY88kQ==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "darwin"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/darwin-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-se/JjF8NlmKVG4kNIuyWMV/22ZaerB+qaSi5MdrXtd6R08kvs2qCN4C09miupktDitvh8jRFflwGFBQcxZRjbw==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "darwin"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/freebsd-arm64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-5JcRxxRDUJLX8JXp/wcBCy3pENnCgBR9bN6JsY4OmhfUtIHe3ZW0mawA7+RDAcMLrMIZaf03NlQiX9DGyB8h4g==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "freebsd"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/freebsd-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-J95kNBj1zkbMXtHVH29bBriQygMXqoVQOQYA+ISs0/2l3T9/kj42ow2mpqerRBxDJnmkUDCaQT/dfNXWX/ZZCQ==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "freebsd"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-arm": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm/-/linux-arm-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-bPb5AHZtbeNGjCKVZ9UGqGwo8EUu4cLq68E95A53KlxAPRmUyYv2D6F0uUI65XisGOL1hBP5mTronbgo+0bFcA==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-arm64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-arm64/-/linux-arm64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-ibKvmyYzKsBeX8d8I7MH/TMfWDXBF3db4qM6sy+7re0YXya+K1cem3on9XgdT2EQGMu4hQyZhan7TeQ8XkGp4Q==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "arm64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-ia32": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-ia32/-/linux-ia32-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-YvjXDqLRqPDl2dvRODYmmhz4rPeVKYvppfGYKSNGdyZkA01046pLWyRKKI3ax8fbJoK5QbxblURkwK/MWY18Tg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "ia32"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-loong64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-loong64/-/linux-loong64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-uHf1BmMG8qEvzdrzAqg2SIG/02+4/DHB6a9Kbya0XDvwDEKCoC8ZRWI5JJvNdUjtciBGFQ5PuBlpEOXQj+JQSg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "loong64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-mips64el": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-mips64el/-/linux-mips64el-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-IajOmO+KJK23bj52dFSNCMsz1QP1DqM6cwLUv3W1QwyxkyIWecfafnI555fvSGqEKwjMXVLokcV5ygHW5b3Jbg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "mips64el"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-ppc64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-ppc64/-/linux-ppc64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-1hHV/Z4OEfMwpLO8rp7CvlhBDnjsC3CttJXIhBi+5Aj5r+MBvy4egg7wCbe//hSsT+RvDAG7s81tAvpL2XAE4w==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "ppc64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-riscv64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-riscv64/-/linux-riscv64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-2HdXDMd9GMgTGrPWnJzP2ALSokE/0O5HhTUvWIbD3YdjME8JwvSCnNGBnTThKGEB91OZhzrJ4qIIxk/SBmyDDA==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "riscv64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-s390x": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-s390x/-/linux-s390x-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-zus5sxzqBJD3eXxwvjN1yQkRepANgxE9lgOW2qLnmr8ikMTphkjgXu1HR01K4FJg8h1kEEDAqDcZQtbrRnB41A==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "s390x"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/linux-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-1rYdTpyv03iycF1+BhzrzQJCdOuAOtaqHTWJZCWvijKD2N5Xu0TtVC8/+1faWqcP9iBCWOmjmhoH94dH82BxPQ==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "linux"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/netbsd-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/netbsd-x64/-/netbsd-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Woi2MXzXjMULccIwMnLciyZH4nCIMpWQAs049KEeMvOcNADVxo0UBIQPfSmxB3CWKedngg7sWZdLvLczpe0tLg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "netbsd"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/openbsd-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/openbsd-x64/-/openbsd-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-HLNNw99xsvx12lFBUwoT8EVCsSvRNDVxNpjZ7bPn947b8gJPzeHWyNVhFsaerc0n3TsbOINvRP2byTZ5LKezow==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "openbsd"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/sunos-x64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/sunos-x64/-/sunos-x64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-6+gjmFpfy0BHU5Tpptkuh8+uw3mnrvgs+dSPQXQOv3ekbordwnzTVEb4qnIvQcYXq6gzkyTnoZ9dZG+D4garKg==",[m
+[32m+[m[32m      "cpu": [[m
+[32m+[m[32m        "x64"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "dev": true,[m
+[32m+[m[32m      "optional": true,[m
+[32m+[m[32m      "os": [[m
+[32m+[m[32m        "sunos"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "engines": {[m
+[32m+[m[32m        "node": ">=12"[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "node_modules/@esbuild/win32-arm64": {[m
+[32m+[m[32m      "version": "0.21.5",[m
+[32m+[m[32m      "resolved": "https://registry.npmjs.org/@esbuild/win32-arm64/-/win32-arm64-0.21.5.tgz",[m
+[32m+[m[32m      "integrity": "sha512-Z0gOTd75VvXqyq7nsl93zwahcTROgqvuAcYDUr+vOv8uHhNSKROyU961kgtCD1e95IqPKSQKH7tBTs
